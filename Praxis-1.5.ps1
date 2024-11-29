@@ -1,0 +1,2 @@
+﻿$logs = Get-EventLog -LogName System -EntryType Error | Select-Object -First 10 | Out-String
+Send-MailMessage -From demo@chilinet.com -Subject "Error Logs (Q)" -To demo@chilinet.com -SmtpServer mail.chilinet.com -Body $logs -Encoding utf8
